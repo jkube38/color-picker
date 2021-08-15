@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href="./color.css" />
+    <title>Color Picker</title>
+</head>
+<body>
+    <div id='rainbowBackground'>
+        <h1 id='title'>COLOR PICKER</h1>
+        <h2 id='codes'>RGB, RGBA, HEX</h2>
+    </div>
+    <div id='colorBlock'></div>
+    <div id='colorSelection'>
+        <div id='colorDisplay'>
+            <div id='colorBlockWhite'>
+                <h2 id='whiteHeader'>LIGHT BACKGROUND</h2>
+            </div>
+            <div id='colorBlockBlack'>
+                <h2 id='blackHeader'>DARK BACKGROUND</h2>
+            </div>
+
+        </div>
+    </div>
+    <div id='colorInfo'>
+        <div id="sliders">
+            R: <input type="range" oninput='rSlider(this.value)' id='rSlider' min="0" max="255" value='0'>
+            G: <input type="range" oninput='gSlider(this.value)' id='gSlider' min="0" max="255" value='0'>
+            B: <input type="range" oninput='bSlider(this.value)' id='bSlider' min="0" max="255" value='0'>
+            A: <input type="range" oninput='aSlider(this.value)' id='aSlider' min="0.0" max="1.0" step=".001" value='1.0'>
+        </div>
+        <div id="colorCodes">
+            <div id='rgbValue'>
+                <h4 id='rgbTitle'>RGB: </h4><h4 id="rVal">0</h4>, <h4 id="gVal">0</h4>, <h4 id="bVal">0</h4> <h4 id='aVal'></h4>
+            </div>
+            <div id='hexValue'>
+                HEX: <h4 id='hVal'>#000000</h4>
+            </div>
+        </div>
+    </div>
+    <script src='color.js'></script>
+</body>
+</html>

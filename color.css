@@ -3,13 +3,15 @@
 /* rainbow background courtesy of Milan nohejl via codepen.io */
 
 #rainbowBackground { 
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
+    position: sticky;
+    top: 5px;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
   
-  -webkit-animation: rainbow 18s ease infinite;
-  -z-animation: rainbow 18s ease infinite;
-  -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;}
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+        animation: rainbow 18s ease infinite;}
   
   @-webkit-keyframes rainbow {
       0%{background-position:0% 82%}
@@ -57,7 +59,9 @@
     justify-content: center;
     width: 50%;
     height: 400px;
-    background-color: white;
+    background-color: black;
+    font-family: 'Jura', sans-serif;
+    color: white;
 }
 
 #colorBlockBlack {
@@ -67,6 +71,7 @@
     width: 50%;
     height: 400px;
     background-color: black;
+    font-family: 'Jura', sans-serif;
 }
 
 #colorSelection {
@@ -83,10 +88,10 @@
     margin: 50px 0 0 0;
 }
 
-#sliders {
+.sliders {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 20%;
 }
 
 #colorBlock {
@@ -108,9 +113,64 @@
     align-items: center;
 }
 
-#colorCodes {
+.colorCodes {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    width: 30%;
+    width: 50%;
     margin: 25px 0 100px 0;
 }
+
+#rHolder {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+#gHolder {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+#bHolder {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+#aHolder {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+#rgbValue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hexValue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#allSliders {
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+}
+
+#allCodes {
+    display: flex;
+    width: 96%;
+}
+
+#foregroundHeader {
+    color: white;
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+}
+

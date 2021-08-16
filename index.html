@@ -12,31 +12,107 @@
         <h1 id='title'>COLOR PICKER</h1>
         <h2 id='codes'>RGB, RGBA, HEX</h2>
     </div>
-    <div id='colorBlock'></div>
+    <div id='colorBlock'>
+        <h2 id='foregroundHeader'>FOREGROUND</h2>
+    </div>
     <div id='colorSelection'>
         <div id='colorDisplay'>
             <div id='colorBlockWhite'>
-                <h2 id='whiteHeader'>LIGHT BACKGROUND</h2>
+                <h2 id='whiteHeader'>BACKGROUND 1</h2>
             </div>
             <div id='colorBlockBlack'>
-                <h2 id='blackHeader'>DARK BACKGROUND</h2>
+                <h2 id='blackHeader'>BACKGROUND 2</h2>
             </div>
 
         </div>
     </div>
     <div id='colorInfo'>
-        <div id="sliders">
-            R: <input type="range" oninput='rSlider(this.value)' id='rSlider' min="0" max="255" value='0'>
-            G: <input type="range" oninput='gSlider(this.value)' id='gSlider' min="0" max="255" value='0'>
-            B: <input type="range" oninput='bSlider(this.value)' id='bSlider' min="0" max="255" value='0'>
-            A: <input type="range" oninput='aSlider(this.value)' id='aSlider' min="0.0" max="1.0" step=".001" value='1.0'>
-        </div>
-        <div id="colorCodes">
-            <div id='rgbValue'>
-                <h4 id='rgbTitle'>RGB: </h4><h4 id="rVal">0</h4>, <h4 id="gVal">0</h4>, <h4 id="bVal">0</h4> <h4 id='aVal'></h4>
+        <div id='allSliders'>
+            <div class="sliders">
+                <div id='rHolder'>
+                    <label for='rSliderB1'>Red (R):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='rSliderB1' min="0" max="255" value='0' >
+                </div>
+                <div id='gHolder'>
+                    <label for='gSliderB1'>Green (G):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='gSliderB1' min="0" max="255" value='0'>
+                </div>
+                <div id='bHolder'>
+                    <label for='bSliderB1'>Blue (B):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='bSliderB1' min="0" max="255" value='0'>
+                </div>
+                <div id='aHolder'>
+                    <label for='aSliderB1'>Alpha (A):</label>
+                    <input type="range" oninput='aSlider(this.value, this.id)' id='aSliderB1' min="0.0" max="1.0" step=".001" value='1.0'>
+                </div>
             </div>
-            <div id='hexValue'>
-                HEX: <h4 id='hVal'>#000000</h4>
+            <div class="sliders">
+                <div id='rHolder'>
+                    <label for='rSlider'>Red (R):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='rSlider' min="0" max="255" value='0' >
+                </div>
+                <div id='gHolder'>
+                    <label for='gSlider'>Green (G):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='gSlider' min="0" max="255" value='0'>
+                </div>
+                <div id='bHolder'>
+                    <label for='bSlider'>Blue (B):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='bSlider' min="0" max="255" value='0'>
+                </div>
+                <div id='aHolder'>
+                    <label for='aSlider'>Alpha (A):</label>
+                    <input type="range" oninput='aSlider(this.value, this.id)' id='aSlider' min="0.0" max="1.0" step=".001" value='1.0'>
+                </div>
+            </div>
+            <div class="sliders">
+                <div id='rHolder'>
+                    <label for='rSlider'>Red (R):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='rSliderB2' min="0" max="255" value='0' >
+                </div>
+                <div id='gHolder'>
+                    <label for='gSlider'>Green (G):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='gSliderB2' min="0" max="255" value='0'>
+                </div>
+                <div id='bHolder'>
+                    <label for='bSlider'>Blue (B):</label>
+                    <input type="range" oninput='sliders(this.value, this.id)' id='bSliderB2' min="0" max="255" value='0'>
+                </div>
+                <div id='aHolder'>
+                    <label for='aSlider'>Alpha (A):</label>
+                    <input type="range" oninput='aSlider(this.value, this.id)' id='aSliderB2' min="0.0" max="1.0" step=".001" value='1.0'>
+                </div>
+            </div>
+        </div>
+        <div id='allCodes'>
+            <div class="colorCodes">
+                <div id='rgbValue'>
+                    <h4 id='rgbValuesB1'>rgb(0, 0, 0)</h4>
+                    <button onclick='copyRGBB1()' id='rgbCopyB1'>Copy RGB</button>
+                </div>
+                <div id='hexValue'>
+                    <h4 id='hValB1'>HEX: #000000</h4>
+                    <button onclick='copyHexB1()' id='hexCopyB1'>Copy Hex</button>
+                </div>
+            </div>
+            <div class="colorCodes">
+                <div id='rgbValue'>
+                    <h4 id='rgbValues'>rgb(0, 0, 0)</h4>
+                    <button onclick='copyRGB()' id='rgbCopy'>Copy RGB</button>
+                </div>
+                <div id='hexValue'>
+                    <h4 id='hVal'>HEX: #000000</h4>
+                    <button onclick='copyHex()' id='hexCopy'>Copy Hex</button>
+                </div>
+            </div>
+            <div class="colorCodes">
+                <div id='rgbValue'>
+                    <h4 id='rgbValuesB2'>rgb(0, 0, 0)</h4>
+                    <button onclick='copyRGBB2()' id='rgbCopyB2'>Copy RGB</button>
+                </div>
+                <div id='hexValue'>
+                    <h4 id='hValB2'>HEX: #000000</h4>
+                    <button onclick='copyHexB2()' id='hexCopyB2'>Copy Hex</button>
+                </div>
             </div>
         </div>
     </div>

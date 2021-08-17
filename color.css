@@ -3,6 +3,7 @@
 /* rainbow background courtesy of Milan nohejl via codepen.io */
 
 #rainbowBackground { 
+    z-index: 2;
     position: sticky;
     top: 5px;
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
@@ -79,6 +80,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 0 0 0;
+    position: relative; top: -200px;
 }
 
 #colorInfo {
@@ -86,6 +88,7 @@
     flex-direction: column;
     align-items: center;
     margin: 50px 0 0 0;
+    position: relative; top: -225px;
 }
 
 .sliders {
@@ -99,7 +102,8 @@
     height: 200px;
     width: 75%;
     margin: 0 0 0 0;
-    position: relative; right: -12%; top: 300px;
+    position: relative; right: -12%; top: 115px;
+    z-index: 1;
 
 }
 
@@ -174,3 +178,44 @@
     font-family: 'Jura', sans-serif;
 }
 
+.slideTitle {
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+}
+
+.hexTitle {
+    margin: 15px 0 0 0;
+    font-family: 'Jura', sans-serif;
+}
+
+#hValB1 {
+    margin: 5px 0 5px 0;
+}
+
+#hVal {
+    margin: 5px 0 5px 0;
+}
+
+#hValB2 {
+    margin: 5px 0 5px 0;
+}
+
+#rgbValuesB1 {
+    margin: 5px 0 5px 0;
+}
+
+#rgbValues {
+    margin: 5px 0 5px 0;
+}
+
+#rgbValuesB2 {
+    margin: 5px 0 5px 0;
+}
+
+.rgbTitles {
+    font-family: 'Jura', sans-serif;
+}
+
+.codeTitles {
+    font-family: 'Jura', sans-serif;
+}

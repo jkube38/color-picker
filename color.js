@@ -95,10 +95,10 @@ function sliders(val, id) {
         }
 
         if(colorAB1 > .999){
-            hValB1.innerHTML = `HEX: #${hexRB1}${hexGB1}${hexBB1}`
+            hValB1.innerHTML = `#${hexRB1}${hexGB1}${hexBB1}`
             rgbValueB1.innerHTML = `rgb(${colorRB1}, ${colorGB1}, ${colorBB1})`
         } else {
-            hValB1.innerHTML = `HEX: #${hexRB1}${hexGB1}${hexBB1}${hexA1B1}${hexA2B1}`
+            hValB1.innerHTML = `#${hexRB1}${hexGB1}${hexBB1}${hexA1B1}${hexA2B1}`
             rgbValueB1.innerHTML = `rgba(${colorRB1}, ${colorGB1}, ${colorBB1}, ${colorAB1})`
         }
 
@@ -125,10 +125,10 @@ function sliders(val, id) {
         }
 
         if(colorA > .999){
-            hValB2.innerHTML = `HEX: #${hexRB2}${hexGB2}${hexBB2}`
+            hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}`
             rgbValueB2.innerHTML = `rgb(${colorRB2}, ${colorGB2}, ${colorBB2})`
         } else {
-            hValB2.innerHTML = `HEX: #${hexRB2}${hexGB2}${hexBB2}${hexA1B2}${hexA2B2}`
+            hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}${hexA1B2}${hexA2B2}`
             rgbValueB2.innerHTML = `rgba(${colorRB2}, ${colorGB2}, ${colorBB2}, ${colorAB2})`
         }
 
@@ -178,10 +178,10 @@ function aSlider(val, id) {
         colorAB1 = val
         colorA2B1 = val
         if(colorAB1 > .999){
-            hValB1.innerHTML = `HEX: #${hexRB1}${hexGB1}${hexBB1}`
+            hValB1.innerHTML = `#${hexRB1}${hexGB1}${hexBB1}`
             rgbValueB1.innerHTML = `rgb(${colorRB1}, ${colorGB1}, ${colorBB1})`
         } else {
-            hValB1.innerHTML = `HEX: #${hexRB1}${hexGB1}${hexBB1}${hexA1B1}${hexA2B1}`
+            hValB1.innerHTML = `#${hexRB1}${hexGB1}${hexBB1}${hexA1B1}${hexA2B1}`
             rgbValueB1.innerHTML = `rgba(${colorRB1}, ${colorGB1}, ${colorBB1}, ${colorAB1})`
         }
 
@@ -200,10 +200,10 @@ function aSlider(val, id) {
         colorAB2 = val
         colorA2B2 = val
         if(colorAB2 > .999){
-            hValB2.innerHTML = `HEX: #${hexRB2}${hexGB2}${hexBB2}`
+            hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}`
             rgbValueB2.innerHTML = `rgb(${colorRB2}, ${colorGB2}, ${colorBB2})`
         } else {
-            hValB2.innerHTML = `HEX: #${hexR}${hexG}${hexB}${hexA1}${hexA2}`
+            hValB2.innerHTML = `#${hexR}${hexG}${hexB}${hexA1}${hexA2}`
             rgbValueB2.innerHTML = `rgba(${colorRB2}, ${colorGB2}, ${colorBB2}, ${colorAB2})`
         }
 
@@ -221,10 +221,10 @@ function aSlider(val, id) {
         colorA = val
         colorA2 = val
         if(colorA > .999){
-            hVal.innerHTML = `HEX: #${hexR}${hexG}${hexB}`
+            hVal.innerHTML = `#${hexR}${hexG}${hexB}`
             rgbValue.innerHTML = `rgb(${colorR}, ${colorG}, ${colorB})`
         } else {
-            hVal.innerHTML = `HEX: #${hexR}${hexG}${hexB}${hexA1}${hexA2}`
+            hVal.innerHTML = `#${hexR}${hexG}${hexB}${hexA1}${hexA2}`
             rgbValue.innerHTML = `rgba(${colorR}, ${colorG}, ${colorB}, ${colorA})`
         }
 
@@ -247,23 +247,31 @@ function aSlider(val, id) {
 }
 
 
+
+copyDictionary = {
+    'rgbCopyB1': 'rgbValuesB1',
+    'hexCopyB1': 'hValB1',
+    'rgbCopy': 'rgbValues',
+    'hexCopy': 'hVal',
+    'rgbCopyB2': 'rgbValuesB2',
+    'hexCopyB2': 'hValB2'
+}
+
 // Copy functions found on https://www.arclab.com/en/kb/htmlcss/how-to-copy-text-from-html-element-to-clipboard.html
-function copyHex () {
+function copyHex (id) {
     let r = document.createRange()
-    r.selectNode(document.getElementById('hVal'))
+    r.selectNode(document.getElementById(copyDictionary[id]))
     window.getSelection().removeAllRanges()
     window.getSelection().addRange(r)
     document.execCommand('copy')
     window.getSelection().removeAllRanges()
 }
 
-function copyRGB() {
+function copyRGB(id) {
     let r = document.createRange()
-    r.selectNode(document.getElementById('rgbValues'))
+    r.selectNode(document.getElementById(copyDictionary[id]))
     window.getSelection().removeAllRanges()
     window.getSelection().addRange(r)
     document.execCommand('copy')
     window.getSelection().removeAllRanges()
 }
-
-

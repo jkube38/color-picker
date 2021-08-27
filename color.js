@@ -171,6 +171,7 @@ function sliders(val, id) {
 }
 
 // calculates the hex value for the alpha channel
+
 function aSlider(val, id) {
     let currentASlider = id.charAt(id.length - 1)
     console.log(currentASlider)

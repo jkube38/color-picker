@@ -203,7 +203,7 @@ function aSlider(val, id) {
             hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}`
             rgbValueB2.innerHTML = `rgb(${colorRB2}, ${colorGB2}, ${colorBB2})`
         } else {
-            hValB2.innerHTML = `#${hexR}${hexG}${hexB}${hexA1}${hexA2}`
+            hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}${hexA1B2}${hexA2B2}`
             rgbValueB2.innerHTML = `rgba(${colorRB2}, ${colorGB2}, ${colorBB2}, ${colorAB2})`
         }
 

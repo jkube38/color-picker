@@ -124,7 +124,7 @@ function sliders(val, id) {
             hexBB2 = ('' + hexDictionary[firstHex] + hexDictionary[secondHex])
         }
 
-        if(colorA > .999){
+        if(colorAB2 > .999){
             hValB2.innerHTML = `#${hexRB2}${hexGB2}${hexBB2}`
             rgbValueB2.innerHTML = `rgb(${colorRB2}, ${colorGB2}, ${colorBB2})`
         } else {
@@ -218,6 +218,7 @@ function aSlider(val, id) {
             let hexValB = (hexRemainder * 1000) / 62.5
             hexA2B2 = hexDictionary[Math.floor(hexValB)]
         }
+
     } else {
         colorA = val
         colorA2 = val
